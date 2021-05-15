@@ -1,0 +1,19 @@
+<h1 class="uk-heading primary" style="margin-left: 14px;">Homes</h1>
+<div style="margin: 14px">
+  <div class="uk-grid-match uk-child-width-expand@s uk-child-width-1-4@m uk-child-width-1-5@l uk-text-center .uk-grid-small" uk-grid>
+    <div data-test="home" *ngFor="let home of homes$ | async">
+      <div>
+        <div class="uk-card uk-card-small uk-card-default uk-card-hover">
+          <div class="uk-card-media-top">
+            <img data-test="image" [src]="home.image" alt="" width="500px" />
+          </div>
+          <div class="uk-card-body">
+            <h3 class="uk-card-title" data-test="title">{{ home.title }}</h3>
+            <p data-test="location">{{ home.location }}</p>
+            <button data-test="book-btn" class="uk-button" (click)="openDialog(home)">Book</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
